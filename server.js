@@ -36,6 +36,10 @@ app.use("/api/transactions", transactionRoutes);
 app.use("/api/token", tokenRoutes); // Changed to a separate token route
 app.use("/api/package-payments", packagePaymentRoutes);
 
+app.get("/", (req, res) => {
+  res.send("🚀 EmpowerUp Backend is running successfully!");
+});
+
 const PORT = process.env.PORT || 5000;
 mongoose
   .connect(process.env.MONGO_URI, {
